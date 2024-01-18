@@ -53,7 +53,9 @@ app.get("/api/get-doctors/:city", (req, res) => {
   } else if (city === "delhi") {
     res.status(200).json({ doctors: delhiDoctors });
   } else {
-    res.status(400).json({ message: "Please provide a valid city" });
+    res
+      .status(200)
+      .json({ doctors: [], message: "Please provide a valid city" });
   }
 });
 
